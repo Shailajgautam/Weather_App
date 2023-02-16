@@ -6,12 +6,16 @@ import sunriseSunsetImg from '../assets/sunrise.png';
 import pressurelogo from '../assets/pressure.png'
 import visibilitylogo from '../assets/visibility.png'
 import airqualitylogo from '../assets/air quality.png'
-import uvlogo from '../assets/uv-protection.png'
 import windspeedlogo from '../assets/wind.png'
 
-export const HomePage = () => {
+
+
+
+export const HomePage = (searchChange) => {
       const sunriseSunsetStyle = "h-12";
       const infoContainerImgStyle = "image-container w-16 mx-2 flex item-centre justify-around mx-auto"
+
+ 
 
   return (
 
@@ -20,7 +24,8 @@ export const HomePage = () => {
       <div className='current_temp_container bg-search-bar-color w-3/5 mx-auto rounded-3xl text-white py-6'>
             <div className="temp_details flex h-60 justify-around items-center ">
                   <div className="left_temp_details">
-                        <h2 className="temp text-9xl">20</h2>
+                        {/* <h2 className="temp text-9xl">20</h2> */}
+                        <h2 className="temp text-9xl">{searchChange}</h2>
                         <h3 className="weather_description text-4xl">Clear</h3>
                   </div>
 
@@ -46,6 +51,7 @@ export const HomePage = () => {
       </div>
       
       <div className='info-container bg-search-bar-color w-1/5 mx-auto flex item-left px-6  py-8 rounded-3xl flex-wrap justify-between'>
+
        <div className='pressure-container py-2 px-4 '>
             <div className={infoContainerImgStyle}>
               <img src={pressurelogo} alt="pressurelogo" />    
@@ -57,6 +63,7 @@ export const HomePage = () => {
                   <p> 3 hpa </p>
             </div>
        </div>
+
        <div className='visibility-container'>
             <div className={infoContainerImgStyle}>
                   <img src={visibilitylogo} alt="visibiitylogo" />
@@ -68,6 +75,7 @@ export const HomePage = () => {
                   3 km
             </div>
        </div>
+
        <div className="airquality-container">
             <div className={infoContainerImgStyle}>
                   <img src={airqualitylogo} alt="air quality logo" />
@@ -79,17 +87,7 @@ export const HomePage = () => {
                   <p> 70 </p>
             </div>
        </div>
-       {/* <div className='UV-conatiner'>
-            <div className={infoContainerImgStyle}>
-                  <img src={uvlogo} alt="UVlogo" />
-            </div>
-            <div className="text-container">
-                  <p> UV </p>
-            </div>
-            <div className="text-container">
-                  <p> 4 UV </p>
-            </div>
-       </div> */}
+
        <div className="windspeed-container">
             <div className={infoContainerImgStyle}>
                   <img src={windspeedlogo} alt="windspeedlogo" />

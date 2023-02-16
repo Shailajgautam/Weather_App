@@ -3,16 +3,17 @@ import LogoImg from '../assets/season.png';
 import { BiSearch} from 'react-icons/bi';
 import { useState } from 'react';
 
-export const Navbar = () => {
+export const Navbar = (searchChangeHandler) => {
   // const [query, setQuery] = useState({
-  //   location: ""
+  //   location: ""`
   // });
 
-  const [query, setQuery] = useState('');
+  // const [query, setQuery] = useState('');
 
-  const handleLocationInputChange = (event) =>{
-    setQuery(event.target.value);
-  };
+
+  // const handleLocationInputChange = (event) =>{
+  //   setQuery(event.target.value);
+  // };
 
   return (
     <div className="navbar_container flex justify-between item-center px-12 py-4">
@@ -27,9 +28,10 @@ export const Navbar = () => {
           </button>
           <input
            className="outline-none bg-search-bar-color w-80"
+
             type="text" 
             placeholder="Search"
-            onChange={handleLocationInputChange}/>
+            onChange={searchChangeHandler}/>
           </form>
 
           
@@ -40,6 +42,7 @@ export const Navbar = () => {
       <button type="submit" className='text-white bg-sign-in-button-color px-4 py-1 mr-12 rounded-3xl'>Sign In</button>
       </div>
     </div>
+    
   )
 }
 
