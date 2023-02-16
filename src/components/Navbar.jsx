@@ -1,8 +1,19 @@
 import React from 'react';
 import LogoImg from '../assets/season.png';
 import { BiSearch} from 'react-icons/bi';
+import { useState } from 'react';
 
 export const Navbar = () => {
+  // const [query, setQuery] = useState({
+  //   location: ""
+  // });
+
+  const [query, setQuery] = useState('');
+
+  const handleLocationInputChange = (event) =>{
+    setQuery(event.target.value);
+  };
+
   return (
     <div className="navbar_container flex justify-between item-center px-12 py-4">
       <div id="logo_container" className="h-12">
@@ -14,8 +25,14 @@ export const Navbar = () => {
           <button className="px-1">
             <BiSearch className='text-white'/>
           </button>
-          <input className="outline-none bg-search-bar-color w-80" type="text" placeholder="Search" />
+          <input
+           className="outline-none bg-search-bar-color w-80"
+            type="text" 
+            placeholder="Search"
+            onChange={handleLocationInputChange}/>
           </form>
+
+          
 
       </div>
       
